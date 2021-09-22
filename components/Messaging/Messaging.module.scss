@@ -1,0 +1,27 @@
+.messaging {
+  width: 50%;
+  margin: 2rem auto 0 auto;
+  border-radius: 0.8rem;
+  height: 70vh;
+  background-color: #f8f8f8;
+  border: 1px solid rgba(93, 31, 255, 0.1);
+
+  &::-webkit-scrollbar {
+    width: 0.3rem;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgb(43, 102, 43);
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgb(107, 141, 107);
+    cursor: pointer;
+  }
+  @media (max-width: "600px") {
+    width: 100%;
+  }
+}
