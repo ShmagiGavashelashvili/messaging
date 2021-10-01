@@ -3,7 +3,7 @@ import { firestore, auth } from "../../data/firebase";
 import firebase from "firebase/app";
 import { useState } from "react";
 
-function SendMessage({ scrollView }) {
+function SendMessage({ scrollView, authUser, selectedUser }) {
   const messagesRef = firestore.collection("messages");
   const [message, setMessage] = useState("");
 
@@ -14,7 +14,8 @@ function SendMessage({ scrollView }) {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       message,
       user: auth.currentUser.displayName,
-      userId: auth.currentUser.uid,
+      userId_1: authUser.uid,
+      userId_2: selectedUser.uid,
     });
 
     setMessage("");
@@ -23,11 +24,7 @@ function SendMessage({ scrollView }) {
   return (
     <div className={styles.sendMessage}>
       <form onSubmit={handleSend}>
-        <input
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="type..."
-        />
+        <input value={message} onChange={(e) => setMessage(e.target.value)} placeholder="type..." />
         <button type="submit">Send</button>
       </form>
     </div>

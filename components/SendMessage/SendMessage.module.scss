@@ -1,6 +1,7 @@
 .sendMessage {
   width: 50%;
   margin: 0 auto;
+  padding-bottom: 5rem;
 
   @media (max-width: "600px") {
     width: 95%;
@@ -10,6 +11,7 @@
     width: 100%;
     display: flex;
     border-radius: 0.8rem;
+    position: relative;
 
     & input {
       width: 90%;

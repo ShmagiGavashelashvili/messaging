@@ -2,27 +2,23 @@ import styles from "./MessageBox.module.scss";
 import { formatRelative } from "date-fns";
 import { auth } from "../../data/firebase";
 
-function SingleMessage({ message, user, createdAt, id, userId }) {
+function SingleMessage({ message, user, createdAt, userId_1 }) {
   const { uid } = auth.currentUser;
+
   const formatDate = (date) => {
     let formattedDate = "";
     if (date) {
       formattedDate = formatRelative(date, new Date());
 
-      formattedDate =
-        formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
+      formattedDate = formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
     }
     return formattedDate;
   };
 
-  const messageStyle = userId === uid ? true : false;
+  const messageStyle = userId_1 === uid ? true : false;
 
   return (
-    <div
-      className={
-        messageStyle ? styles.messageBox_sent : styles.messageBox_revieved
-      }
-    >
+    <div className={messageStyle ? styles.messageBox_sent : styles.messageBox_revieved}>
       <div className={styles.messageBox_msgDetail}>
         <h2>
           <p style={{ backgroundColor: messageStyle ? "hotpink" : "grey" }}>

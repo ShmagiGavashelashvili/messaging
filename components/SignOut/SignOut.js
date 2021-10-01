@@ -1,11 +1,14 @@
-import { auth } from "../../data/firebase";
+import { auth, firestore } from "../../data/firebase";
 import styles from "./signout.module.scss";
 
 function SignOut() {
+  const logOut = async () => {
+    await auth.signOut();
+  };
   return (
     auth.currentUser && (
       <div className={styles.signout}>
-        <button onClick={async () => await auth.signOut()}>Sign Out</button>
+        <button onClick={logOut}>Sign Out</button>
       </div>
     )
   );
