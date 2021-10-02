@@ -1,0 +1,11 @@
+.userlistItem {
+  cursor: pointer;
+  border: 1px solid #dddddd;
+  width: 100%;
+  padding: 0.5rem;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #f8f8f8;
+  }
+}

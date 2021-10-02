@@ -1,6 +1,6 @@
 .sendMessage {
-  width: 50%;
-  margin: 0 auto;
+  width: 100%;
+
   padding-bottom: 5rem;
 
   @media (max-width: "600px") {
@@ -10,14 +10,12 @@
   & form {
     width: 100%;
     display: flex;
-    border-radius: 0.8rem;
     position: relative;
 
     & input {
       width: 90%;
       padding: 1rem;
       border: none;
-      border-radius: 0.8rem 0rem 0rem 0.8rem;
       outline: none;
       border: 1px solid rgba(93, 31, 255, 0.1);
       background-color: #f8f8f8;
@@ -31,7 +29,6 @@
       width: 10%;
       border: none;
       cursor: pointer;
-      border-radius: 0rem 0.8rem 0.8rem 0rem;
       background-color: rgba(green, 0.6);
       color: #ffffff;
       transition: 0.3s;

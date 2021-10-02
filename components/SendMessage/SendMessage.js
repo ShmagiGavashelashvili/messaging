@@ -1,5 +1,5 @@
 import styles from "./SendMessage.module.scss";
-import { firestore, auth } from "../../data/firebase";
+import { firestore } from "../../data/firebase";
 import firebase from "firebase/app";
 import { useState } from "react";
 
@@ -13,7 +13,7 @@ function SendMessage({ scrollView, authUser, selectedUser }) {
     await messagesRef.add({
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       message,
-      user: auth.currentUser.displayName,
+      user: selectedUser.userName,
       userId_1: authUser.uid,
       userId_2: selectedUser.uid,
     });

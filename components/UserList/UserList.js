@@ -1,12 +1,11 @@
+import styles from "./userList.module.scss";
+
 const UsersList = ({ user, selectUser, authUser }) => {
   return (
     <li
       onClick={() => selectUser(user)}
+      className={styles.userlistItem}
       style={{
-        cursor: "pointer",
-        margin: ".5rem",
-        backgroundColor: "indigo",
-        width: "15rem",
         display: user.uid === authUser.uid ? "none" : "block",
       }}
     >
